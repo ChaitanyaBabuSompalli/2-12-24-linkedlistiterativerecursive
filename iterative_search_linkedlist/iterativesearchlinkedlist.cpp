@@ -1,5 +1,5 @@
 #include <iostream>  //This line includes the input/output stream library which allows input and output operations.
-
+   
 struct Node {
     int data;
     Node* next;
