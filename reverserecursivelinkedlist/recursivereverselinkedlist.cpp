@@ -10,7 +10,7 @@ struct Node {
 Node* reverseLinkedListRecursive(Node* head) {
     // Base case: if the current node is nullptr or the last node in the list, return it
     if (head == nullptr || head->next == nullptr)
-        return head;
+        return head;   
 
     // Recursively reverse the sublist starting from the next node
     Node* newHead = reverseLinkedListRecursive(head->next);

@@ -6,7 +6,7 @@ struct Node {
 
     Node(int val) : data(val), next(nullptr) {}
 };   // This declares a struct named Node which represents a node in a linked list. It contains an integer data and a pointer next to the next node in the list. It also defines a constructor to initialize the data and next pointer of a node.cpp
-              
+                 
 
 int findLengthIterative(Node* head) {
     int length = 0;                      //This function findLengthIterative calculates the length of a linked list iteratively. It takes a pointer to the head of the list as input. It initializes a variable length to 0 and a pointer current to the head of the list. It then iterates through the list, incrementing the length for each node, until it reaches the end of the list (where current becomes nullptr). Finally, it returns the calculated length.
