@@ -1,82 +1,82 @@
-#include <iostream>
+#include <iostream> // Include input/output stream library
 
-#include <vector>
+#include <vector> // Include vector library for dynamic arrays
 
-#include <queue>
+#include <queue> // Include queue library for queue data structure
 
-using namespace std;
+using namespace std; // Using standard namespace
 
 
 
-class DynamicDataStructureApp {
+class DynamicDataStructureApp { // Define a class named DynamicDataStructureApp
 
 public:
 
-    void run() {
+    void run() { // Define a function named run
 
-        cout << "Choose a data structure:" << endl;
+        cout << "Choose a data structure:" << endl; // Display a prompt to choose a data structure
 
-        cout << "1. List" << endl;
+        cout << "1. List" << endl; // Display option 1 for List
 
-        cout << "2. Linked List" << endl;
+        cout << "2. Linked List" << endl; // Display option 2 for Linked List
 
-        cout << "3. Array" << endl;
+        cout << "3. Array" << endl; // Display option 3 for Array
 
-        cout << "4. Stack" << endl;
+        cout << "4. Stack" << endl; // Display option 4 for Stack
 
-        cout << "5. Queue" << endl;
+        cout << "5. Queue" << endl; // Display option 5 for Queue
 
-        cout << "6. Binary Tree" << endl;
-
-
-
-        int choice;
-
-        cin >> choice;
+        cout << "6. Binary Tree" << endl; // Display option 6 for Binary Tree
 
 
 
-        switch (choice) {
+        int choice; // Declare an integer variable named choice
+
+        cin >> choice; // Read user's choice from input
+
+
+
+        switch (choice) { // Start switch statement based on user's choice
 
         case 1:
 
-            handleList();
+            handleList(); // Call handleList function for option 1
 
             break;
 
         case 2:
 
-            handleLinkedList();
+            handleLinkedList(); // Call handleLinkedList function for option 2
 
             break;
 
         case 3:
 
-            handleArray();
+            handleArray(); // Call handleArray function for option 3
 
             break;
 
         case 4:
 
-            handleStack();
+            handleStack(); // Call handleStack function for option 4
 
             break;
 
         case 5:
 
-            handleQueue();
+            handleQueue(); // Call handleQueue function for option 5
 
             break;
 
         case 6:
 
-            handleBinaryTree();
+            handleBinaryTree(); // Call handleBinaryTree function for option 6
 
             break;
 
         default:
 
-            cout << "Invalid choice." << endl;
+            cout << "Invalid choice." << endl; // Display message for invalid choice
 
         }
 
@@ -86,99 +86,99 @@ public:
 
 private:
 
-    void handleList() {
+    void handleList() { // Define handleList function
 
-        vector<int> list;
+        vector<int> list; // Declare a vector named list to store integers
 
-        int size;
+        int size; // Declare an integer variable named size
 
-        cout << "Enter the size of the list: ";
+        cout << "Enter the size of the list: "; // Prompt user to enter the size of the list
 
-        cin >> size;
-
-
-
-        cout << "Enter data for the list (separated by spaces): ";
-
-        for (int i = 0; i < size; ++i) {
-
-            int data;
-
-            cin >> data;
-
-            list.push_back(data);
-
-        }
+        cin >> size; // Read user's input for list size
 
 
 
-        cout << "List: ";
+        cout << "Enter data for the list (separated by spaces): "; // Prompt user to enter data for the list
 
-        for (int num : list) {
+        for (int i = 0; i < size; ++i) { // Iterate from 0 to size - 1
 
-            cout << num << " ";
+            int data; // Declare an integer variable named data
+
+            cin >> data; // Read user's input for each element
+
+            list.push_back(data); // Add each element to the end of the list
 
         }
 
-        cout << endl;
+
+
+        cout << "List: "; // Display message indicating the list
+
+        for (int num : list) { // Iterate through each element in the list
+
+            cout << num << " "; // Display the element followed by a space
+
+        }
+
+        cout << endl; // Move to the next line
 
     }
 
 
 
-    void handleLinkedList() {
+    void handleLinkedList() { // Define handleLinkedList function
 
-        class Node {
+        class Node { // Define a nested class named Node
 
         public:
 
-            int data;
+            int data; // Declare an integer variable named data
 
-            Node* next;
+            Node* next; // Declare a pointer to Node named next
 
-            Node(int data) : data(data), next(nullptr) {}
+            Node(int data) : data(data), next(nullptr) {} // Constructor to initialize data and next
 
         };
 
 
 
-        Node* head = nullptr;
+        Node* head = nullptr; // Declare a pointer to Node named head and initialize it to nullptr
 
-        int size;
+        int size; // Declare an integer variable named size
 
-        cout << "Enter the size of the linked list: ";
+        cout << "Enter the size of the linked list: "; // Prompt user to enter the size of the linked list
 
-        cin >> size;
+        cin >> size; // Read user's input for linked list size
 
 
 
-        cout << "Enter data for the linked list: ";
+        cout << "Enter data for the linked list: "; // Prompt user to enter data for the linked list
 
-        for (int i = 0; i < size; ++i) {
+        for (int i = 0; i < size; ++i) { // Iterate from 0 to size - 1
 
-            int data;
+            int data; // Declare an integer variable named data
 
-            cin >> data;
+            cin >> data; // Read user's input for each element
 
-            Node* newNode = new Node(data);
+            Node* newNode = new Node(data); // Create a new Node with the input data
 
-            if (head == nullptr) {
+            if (head == nullptr) { // If the linked list is empty
 
-                head = newNode;
+                head = newNode; // Set the new node as the head
 
             }
 
-            else {
+            else { // If the linked list is not empty
 
-                Node* temp = head;
+                Node* temp = head; // Declare a pointer to Node named temp and initialize it to head
 
-                while (temp->next != nullptr) {
+                while (temp->next != nullptr) { // Traverse to the end of the linked list
 
-                    temp = temp->next;
+                    temp = temp->next; // Move to the next node
 
                 }
 
-                temp->next = newNode;
+                temp->next = newNode; // Set the next pointer of the last node to the new node
 
             }
 
@@ -186,31 +186,31 @@ private:
 
 
 
-        cout << "Linked List: ";
+        cout << "Linked List: "; // Display message indicating the linked list
 
-        Node* temp = head;
+        Node* temp = head; // Declare a pointer to Node named temp and initialize it to head
 
-        while (temp != nullptr) {
+        while (temp != nullptr) { // Traverse the linked list until the end
 
-            cout << temp->data << " ";
+            cout << temp->data << " "; // Display the data of the current node followed by a space
 
-            temp = temp->next;
+            temp = temp->next; // Move to the next node
 
         }
 
-        cout << endl;
+        cout << endl; // Move to the next line
 
 
 
         // Free memory
         //changes
-        while (head != nullptr) {
+        while (head != nullptr) { // Loop until head is nullptr
 
-            Node* temp = head;
+            Node* temp = head; // Declare a pointer to Node named temp and initialize it to head
 
-            head = head->next;
+            head = head->next; // Move head to the next node
 
-            delete temp;
+            delete temp; // Delete the current node
 
         }
 
@@ -218,150 +218,56 @@ private:
 
 
 
-    void handleArray() {
+    void handleArray() { // Define handleArray function
 
-        int* arr;
+        int* arr; // Declare a pointer to integer named arr
 
-        int size;
+        int size; // Declare an integer variable named size
 
-        cout << "Enter the size of the array: ";
+        cout << "Enter the size of the array: "; // Prompt user to enter the size of the array
 
-        cin >> size;
-
-
-
-        arr = new int[size];
+        cin >> size; // Read user's input for array size
 
 
 
-        cout << "Enter data for the array: ";
-
-        for (int i = 0; i < size; ++i) {
-
-            cin >> arr[i];
-
-        }
+        arr = new int[size]; // Dynamically allocate memory for the array
 
 
 
-        cout << "Array: ";
+        cout << "Enter data for the array: "; // Prompt user to enter data for the array
 
-        for (int i = 0; i < size; ++i) {
+        for (int i = 0; i < size; ++i) { // Iterate from 0 to size - 1
 
-            cout << arr[i] << " ";
+            cin >> arr[i]; // Read user's input for each element
 
         }
 
-        cout << endl;
+
+
+        cout << "Array: "; // Display message indicating the array
+
+        for (int i = 0; i < size; ++i) { // Iterate through each element in the array
+
+            cout << arr[i] << " "; // Display the element followed by a space
+
+        }
+
+        cout << endl; // Move to the next line
 
 
 
-        delete[] arr;
+        delete[] arr; // Free the dynamically allocated memory
 
     }
 
 
 
-    void handleStack() {
+    void handleStack() { // Define handleStack function
 
-        vector<int> stack;
+        vector<int> stack; // Declare a vector named stack to store integers
 
-        int size;
+        int size; // Declare an integer variable named size
 
-        cout << "Enter the size of the stack: ";
+        cout << "Enter the size of the stack: "; // Prompt user to enter the size of the stack
 
-        cin >> size;
-
-
-
-        cout << "Enter data for the stack (top to bottom): ";
-
-        for (int i = 0; i < size; ++i) {
-
-            int data;
-
-            cin >> data;
-
-            stack.push_back(data);
-
-        }
-
-
-
-        cout << "Stack (top to bottom): ";
-
-        for (int i = stack.size() - 1; i >= 0; --i) {
-
-            cout << stack[i] << " ";
-
-        }
-
-        cout << endl;
-
-    }
-
-
-
-    void handleQueue() {
-
-        queue<int> q;
-
-        int size;
-
-        cout << "Enter the size of the queue: ";
-
-        cin >> size;
-
-
-
-        cout << "Enter data for the queue (front to back): ";
-
-        for (int i = 0; i < size; ++i) {
-
-            int data;
-
-            cin >> data;
-
-            q.push(data);
-
-        }
-
-
-
-        cout << "Queue (front to back): ";
-
-        while (!q.empty()) {
-
-            cout << q.front() << " ";
-
-            q.pop();
-
-        }
-
-        cout << endl;
-
-    }
-
-
-
-    void handleBinaryTree() {
-
-        // Implementation of binary tree handling
-
-        cout << "Binary Tree handling is not implemented yet." << endl;
-
-    }
-
-};
-
-
-
-int main() {
-
-    DynamicDataStructureApp app;
-
-    app.run();
-
-    return 0;
-
-}
+        cin >> size; // Read user
